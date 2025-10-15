@@ -1,0 +1,150 @@
+.product-card {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  box-shadow: 1px 1px 14px 2px #0000001f;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);    /* 4px */
+    box-shadow: 2px 2px 18px 3px #00000030;
+  }
+
+  .product-image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .favorite-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      padding: 0.4rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        background: #ffb3b3;
+      }
+    }
+  }
+
+  .product-info {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+    color: #444;
+    min-height: 40px;
+  }
+
+  .product-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+  }
+
+  .product-actions {
+    margin-top: 1rem;
+
+    .btn-primary,
+    .btn-disabled {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #2f4f4f;
+      color: #fff;
+
+      &:hover {
+        background: #1e2e2e;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+        background: #000;
+      }
+    }
+
+    .btn-disabled {
+      background: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+  }
+
+  .in-stock {
+    color: green;
+    font-weight: bold;
+  }
+
+  .out-of-stock {
+    color: red;
+    font-weight: bold;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: #fff;
+  }
+
+  .gaming {
+    background: #8b0000;
+  }
+
+  .clothing {
+    background: #ff6347;
+  }
+
+  .home {
+    background: #4682b4;
+  }
+
+  .electronics {
+    background: #2f4f4f;
+  }
+
+  .sports {
+    background: #9370db;
+  }
+
+  .default {
+    background: #aaa;
+  }
+}

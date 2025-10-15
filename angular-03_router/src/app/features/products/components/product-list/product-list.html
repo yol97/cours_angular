@@ -1,0 +1,38 @@
+<div class="product-list">
+  <!-- <h2>Nos produits</h2> -->
+
+  <div class="product-list-container">
+    <div class="header">
+      <h2>Notre catalogue</h2>
+      <div class="counters">
+        <span class="counter">🛒 Panier: {{ getCartCount() }}</span>
+        <span class="counter">❤️ Favoris: {{ getFavoritesCount() }}</span>
+      </div>
+    </div>
+
+    @if (products.length > 0) {
+      <div class="products-grid">
+        @for (product of products; track product.id) {
+          <!-- 👇 Hop c'est ici que ça se passe Communication parent → enfant -->
+          <app-product-card
+            [product]="product"
+            [isFavorite]="isInFavorites(product.id)"
+            (productAddedToCart)="onProductAddedToCart($event)"
+            (productAddedToFavorites)="onProductAddedToFavorites($event)"
+            (productRemovedFromFavorites)="onProductRemovedFromFavorites($event)">
+          </app-product-card>
+        }
+      </div>
+
+      <div class="product-stats">
+        <!-- <p><strong>{{ getTotalProducts() }}</strong> produits au total</p>
+        <p><strong>{{ getInStockCount() }}</strong> produits en stock</p> -->
+        <p><strong>{{ products.length }}</strong> produits au total</p>
+        <p><strong>{{ getCartCount() }}</strong> articles dans le panier</p>
+        <p><strong>{{ getFavoritesCount() }}</strong> produits favoris</p>
+      </div>
+    } @else {
+      <p class="no-products">Aucun produit disponible pour le moment</p>
+    }
+  </div>
+</div>

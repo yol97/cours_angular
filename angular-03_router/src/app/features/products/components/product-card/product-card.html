@@ -1,0 +1,38 @@
+<!-- product-card.html -->
+<div class="product-card">
+  <div class="product-image-container">
+    <img [src]="product().imageUrl" [alt]="product().name" class="product-image">
+    <button
+      (click)="onToggleFavorite()"
+      class="favorite-btn">
+      {{ isFavorite() ? '❤️' : '🤍' }}
+    </button>
+  </div>
+
+  <div class="product-info">
+    <!-- 👇 Hop ici ausi on lit le signal avec les paranthèses-->
+    <h3 class="product-name">{{ product().name }}</h3>
+    <!-- 👇 IDEM -->
+    <p class="product-description">{{ product().description }}</p>
+
+    <div class="product-meta">
+      <!-- 👇 Tout pareil -->
+      <span class="product-price">{{ product().price }}€</span>
+      <!-- 👇 Toopareil -->
+      <span class="product-rating">⭐ {{ product().rating }}/5</span>
+    </div>
+
+    <div class="product-actions">
+      <!-- 👇 The same -->
+      @if (product().inStock) {
+        <button (click)="onAddToCart()" class="btn-primary">
+          Ajouter au panier
+        </button>
+      } @else {
+        <button [disabled]="true" class="btn-disabled">
+          En rupture
+        </button>
+      }
+    </div>
+  </div>
+</div>

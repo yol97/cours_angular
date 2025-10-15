@@ -1,0 +1,62 @@
+<div class="register-container">
+  <p>register works!</p>
+
+  <form [formGroup]="profileForm">
+    <label for="username">Username :</label>
+    <input type="text" formControlName="username">
+    @if (profileForm.controls.username.invalid && profileForm.controls.username.touched) {
+      <p class="error">Le username est requis</p>
+    }
+  </form>
+
+  <form [formGroup]="profileForm">
+    <label for="email">Email :</label>
+    <input id="email" formControlName="email" [attr.aria-invalid]="profileForm.controls.email.invalid">
+    @if (profileForm.controls.email.invalid && profileForm.controls.email.touched) {
+      <p class="error">Le mail doit être valide</p>
+    }
+  </form>
+
+  <form [formGroup]="profileForm">
+    <label for="password">Password :</label>
+    <input type="password" id="password" formControlName="password" [attr.aria-invalid]="profileForm.controls.password.invalid">
+    @if (profileForm.controls.password.invalid && profileForm.controls.password.touched) {
+      <p class="error">Le password doit avoir au moins 6 caractères</p>
+    }
+  </form>
+
+  <form [formGroup]="profileForm">
+    <label for="confirmPassword">Confirm Password :</label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword" [attr.aria-invalid]="profileForm.controls.confirmPassword.invalid">
+
+
+    <!-- @if (profileForm.controls.confirmPassword.invalid && profileForm.controls.confirmPassword.touched) {
+      <p class="error">Les mots de passe ne correspondent pas</p>
+    } -->
+
+    @if (profileForm.get('confirmPassword')?.errors?.['required'] && profileForm.get('confirmPassword')?.touched) {
+      <div>La confirmation du mot de passe est requise.</div>
+    }
+    @if (profileForm.errors?.['passwordMismatch']) {
+      <div>Les mots de passe ne correspondent pas.</div>
+    }
+
+
+  </form>
+
+  <div [formGroup]="shippingForm" class="address-container">
+    <div formArrayName="addresses">
+      @for (address of addresses.controls; track $index) {
+        <div class="address-item">
+          <input [formControlName]="$index" placeholder="Adresse">
+          <button type="button" (click)="addresses.removeAt($index)">Supprimer</button>
+        </div>
+      }
+    </div>
+    <button type="button" class="add-address-btn" (click)="addresses.push(fb.control(''))">Ajouter une adresse</button>
+  </div>
+
+  <div class="submit-container">
+    <button type="submit" [disabled]="profileForm.invalid">Envoyer</button>
+  </div>
+</div>
