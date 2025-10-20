@@ -7,24 +7,24 @@
     margin-bottom: 1rem;
   }
 
-  /* .product-list-container {
+  .product-list-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
     justify-content: center;
-  } */
-
-  .products-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
   }
+}
 
-  .stats,
-  .product-stats {
-    margin-top: 1rem;
-    font-weight: bold;
-    text-align: center;
-  }
+.stats {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 1rem;
+  color: #444;
 }
