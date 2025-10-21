@@ -2,11 +2,10 @@ import { Component, signal } from '@angular/core';
 import { Header } from "./core/components/header/header";
 import { Footer } from "./core/components/footer/footer";
 import { ResolveEnd, ResolveStart, Router, RouterOutlet } from '@angular/router';
-import {Counter} from './temp/counter';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, RouterOutlet, Counter],
+  imports: [Header, Footer, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

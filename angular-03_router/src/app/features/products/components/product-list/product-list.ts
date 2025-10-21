@@ -3,11 +3,12 @@ import {Product} from '../../models/product.model';
 import {ActivatedRoute} from '@angular/router';
 import {ProductCard} from '../product-card/product-card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ButtonFilter} from '../button-filter/button-filter';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductCard, ReactiveFormsModule, FormsModule],
+  imports: [ProductCard, ReactiveFormsModule, FormsModule, ButtonFilter],
   templateUrl: './product-list.html',
   styleUrls: ['./product-list.scss'],
 })

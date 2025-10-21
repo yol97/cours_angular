@@ -1,0 +1,4 @@
+<!-- button-filter.html -->
+@for (category of categories; track category) {
+  <button [class.active]="active() === category" (click)="onClick(category)">{{ category === ''? "reset":category }}</button>
+}
