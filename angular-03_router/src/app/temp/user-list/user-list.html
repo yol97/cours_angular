@@ -1,0 +1,42 @@
+<!-- user-list.html -->
+<div class="container">
+  <div class="header">
+    <h2>Liste des utilisateurs</h2>
+    <button
+      (click)="refresh()"
+      [disabled]="isLoading()"
+      class="refresh-btn">
+      {{ isLoading() ? 'Chargement...' : 'Actualiser' }}
+    </button>
+  </div>
+
+  <!-- État de chargement -->
+  @if (isLoading()) {
+    <div class="loading">
+      <p>Chargement des utilisateurs...</p>
+    </div>
+  }
+
+  <!-- Gestion d'erreur -->
+  @if (error()) {
+    <div class="error">
+      <p>{{ error() }}</p>
+      <button (click)="refresh()">Réessayer</button>
+    </div>
+  }
+
+  <!-- Affichage des utilisateurs -->
+  @if (!isLoading() && !error() && users().length > 0) {
+    <div class="users-grid">
+      @for (user of users(); track user.id) {
+        <div class="user-card">
+          <h3>{{ user.name }}</h3>
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Téléphone:</strong> {{ user.phone }}</p>
+          <p><strong>Site web:</strong> {{ user.website }}</p>
+        </div>
+      }
+    </div>
+  }
+</div>

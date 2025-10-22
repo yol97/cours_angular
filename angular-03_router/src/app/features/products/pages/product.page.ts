@@ -7,7 +7,7 @@ import { Product } from '../models/product.model';
   selector: 'app-product-page',
   imports: [ProductList],
   template: `
-    <p>Le resolver a bien ramené les données ! La preuve, dans le tableau de produits, il y a  {{ products.length}} éléments 😇</p>
+    <p>Le resolver a bien ramené les données ! La preuve, dans le tableau de produits, il y a  {{ products.length }} éléments 😇</p>
     <app-product-list></app-product-list>
   `,
   styles: ``
