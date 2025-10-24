@@ -1,5 +1,5 @@
 import {Component, computed, inject, OnInit, signal} from '@angular/core';
-import {Product} from '../../models/product.model';
+import {Product} from '../../../product/models/product.model';
 import {ActivatedRoute} from '@angular/router';
 import {ProductCard} from '../product-card/product-card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -16,7 +16,7 @@ export class ProductList implements OnInit {
   products: Product[] = [];
   cartItems: Product[] = [];
   favoriteIds: number[] = [];
-  isLoading: boolean = false;
+  //isLoading: boolean = false;
   category = signal('');
 
   private route = inject(ActivatedRoute)

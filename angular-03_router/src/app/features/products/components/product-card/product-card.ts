@@ -1,6 +1,6 @@
 import {Component, computed, input, output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {Product} from '../../models/product.model';
+import {Product} from '../../../product/models/product.model';
 import {RouterLink} from '@angular/router';
 import {NoteForm} from '../note-form/note-form';
 
