@@ -1,11 +1,9 @@
 import {ResolveFn} from '@angular/router';
 import {inject} from '@angular/core';
-import {ProductApi} from '../../features/products/services/product-api';
-import {Product} from '../../features/product/models/product.model';
+import {ProductFacade} from '../../features/product/services/product.facade';
 
-export const productListResolver: ResolveFn<Product[]> = (route, state) => {
-  const productApi = inject(ProductApi);
-  //productApi.getProducts().then(products => {
-
-  return productApi.getProducts()
+export const productListResolver: ResolveFn<boolean> = (route, state) => {
+  const productFacade = inject(ProductFacade);
+  productFacade.getProducts();
+  return true;
 };

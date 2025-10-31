@@ -1,7 +1,7 @@
 // src/app/features/products/pages/product-detail.page.ts
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../../product/models/product.model';
+import { Product } from '../models/product.model';
 import {ProductCard} from '../components/product-card/product-card';
 
 @Component({

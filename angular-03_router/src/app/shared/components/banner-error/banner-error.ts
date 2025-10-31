@@ -1,17 +1,13 @@
-// shared/components/banner-error.ts
-import { Component, inject } from '@angular/core';
-import { ErrorService } from '../../../core/services/error.service';
-
+import {Component, inject} from '@angular/core';
+import {NotificationService} from '../../services/notification.service';
 
 @Component({
-  selector: 'banner-error',
-  template: `
-    @if (error()) {
-      <div class="banner">{{ error() }}</div>
-    }
-  `,
-  styles: [`.banner { position:fixed; top:0; width:100%; background:darkred; color:white; }`]
+  selector: 'app-banner',
+  imports: [],
+  templateUrl: './banner-error.html',
+  styleUrl: './banner-error.scss'
 })
-export class BannerError {
-  error = inject(ErrorService).error;
+export class BannerError  {
+  message = inject(NotificationService).message
+  variant = inject(NotificationService).variant
 }

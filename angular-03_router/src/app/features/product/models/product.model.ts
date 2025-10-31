@@ -1,4 +1,5 @@
 export type Product = {
+  active: boolean;        // à supprimer
   id: number;
   name: string;
   description: string;
@@ -6,6 +7,7 @@ export type Product = {
   imageUrl: string;
   category: string;
   inStock: boolean;
+  stock: number;
   rating: number;
   reviews?: number[];
 };

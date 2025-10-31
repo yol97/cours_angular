@@ -1,16 +1,13 @@
-// shared/components/toast-error.ts
 import {Component, inject} from '@angular/core';
-import {ErrorService} from '../../../core/services/error.service';
+import {NotificationService} from '../../services/notification.service';
 
 @Component({
-  selector: 'toast-error',
-  template: `
-		  @if(error()) {
-			  <div>{{ error() }}</div>
-		  }
-  `,
-  styles: [`div { background:red; color:white; padding:0.5rem; }`]
+  selector: 'app-toast',
+  imports: [],
+  templateUrl: './toast-error.html',
+  styleUrl: './toast-error.scss'
 })
-export class ToastError {
-  error = inject(ErrorService).error;
+export class ToastError  {
+  message = inject(NotificationService).message
+  variant = inject(NotificationService).variant
 }

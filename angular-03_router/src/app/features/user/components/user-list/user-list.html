@@ -1,24 +1,51 @@
 <!-- user-list.html -->
-<div>
-  <h2>Liste des utilisateurs</h2>
-
-  <!-- Gestion des erreurs -->
-  @if (error()) {
-    <p>{{ error() }}</p>
-    <button (click)="refresh()"Réessayer></button>
-  }
-
-  <!-- Affichage des utilisateurs -->
-  @for (user of users(); track user.id) {
-    <div>
-      <p>{{ user.name }} - {{ user.email }}</p>
-      <button
-        (click)="deleteUser(user.id)"
-        [disabled]="isDeleting() === user.id">
-        {{ isDeleting() === user.id ? 'Suppression...' : 'Supprimer' }}
-      </button>
+<div class="container">
+  <div class="header">
+    <h2>Liste des utilisateurs</h2>
+    <!-- Affichage des utilisateurs -->
+    <div class="actions">
+      <button (click)="refresh()">Refresh</button>
+      <button (click)="loadMockUsers()">Charger un petit mock</button>
+      <button (click)="addRandomUser()">Ajouter un user aléatoire</button>
+      <button (click)="updateFirstUser()">Modifier le premier user</button>
+      <button (click)="clearUsers()">Vider la liste omg</button>
     </div>
-  } @empty {
-    <p>Aucun utilisateur trouvé</p>
+  </div>
+  @if (users().length > 0) {
+    <div class="container">
+      <p>Nombre d'utilisateur : {{ count() }}</p>
+      <table>
+        <thead>
+        <tr>
+          <th><b>Name</b></th>
+          <th><b>Username</b></th>
+          <th><b>Email</b></th>
+          <th><b>Téléphone</b></th>
+          <th><b>Web site</b></th>
+          <th><b>Supprimer</b></th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (user of users(); track user.id) {
+            <tr class="user-card">
+              <td><a href="/admin/users/{{ user.id }}">{{ user.name }}</a></td>
+              <td> {{ user.username }}</td>
+              <td> {{ user.email }}</td>
+              <td> {{ user.phone }}</td>
+              <td> {{ user.website }}</td>
+              <td>
+                <button
+                  (click)="deleteUser(user)"
+                  [disabled]="isDeleting() === user.id">
+                  {{ isDeleting() === user.id ? 'Suppression...' : 'Supprimer' }}
+                </button>
+              </td>
+            </tr>
+          } @empty {
+            <p>Aucun utilisateur trouvé</p>
+          }
+        </tbody>
+      </table>
+    </div>
   }
 </div>

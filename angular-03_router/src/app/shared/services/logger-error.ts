@@ -1,9 +1,9 @@
 // shared/services/logger-error
-import {ErrorService} from '../../core/services/error.service';
 import {effect, inject, Injectable} from '@angular/core';
+import {ErrorService} from '../../core/services/error.service';
 
-@Injectable({ providedIn: 'root' })
-export class LoggerError {
+@Injectable({providedIn: 'root'})
+export class LoggerErrorService {
   constructor() {
     const errorService = inject(ErrorService);
     effect(() => {

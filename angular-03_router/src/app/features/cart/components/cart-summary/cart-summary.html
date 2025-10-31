@@ -1,0 +1,25 @@
+<div [class]='onPage()?"cart-summary-page": "cart-summary"'>
+  @if (!onPage()) {
+    <h2>Panier</h2>
+  }
+  @if (cart().length > 0) {
+    <div class="row between">
+      <p>Nombre de produit : {{ count() }}</p>
+      @if (!onPage()) {
+        <button routerLink="/cart">Aller au panier</button>
+      } @else {
+        <button (click)="clearCart()" class="del">Vider le panier</button>
+      }
+    </div>
+  }
+  <div class="row">
+    @for (item of cart(); track item.product.id) {
+      <app-cart-item [cartItem]="item"></app-cart-item>
+
+    } @empty {
+      <p><i>Pas de produit dans le panier</i></p>
+    }
+    <hr>
+  </div>
+  <p class="total"><b>Total :</b><b> {{ total() }}€</b></p>
+</div>

@@ -1,0 +1,13 @@
+<div class="cart-item">
+  @if (cartItem()) {
+    <img [alt]="cartItem().product.name" [src]="cartItem().product.imageUrl">
+    <div class="row">
+      <p>{{ cartItem().product.name }}</p>
+      <p>{{ cartItem().product.price }}€</p>
+    </div>
+    <app-quantity [cartItem]="cartItem()"></app-quantity>
+    <button (click)="removeItem(cartItem().product.id)" class="del">🗑️</button>
+  } @else {
+    <p>Product not found</p>
+  }
+</div>
