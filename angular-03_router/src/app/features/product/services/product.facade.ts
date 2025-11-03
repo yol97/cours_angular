@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {ProductApi} from './product-api';
+import {ProductApi} from './product.api';
 import {ProductStore} from './product.store';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {ProductRules} from '../domain/product.rules';

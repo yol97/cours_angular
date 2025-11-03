@@ -2,11 +2,15 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {inject, Injectable} from '@angular/core';
 import {firstValueFrom} from 'rxjs';
 import {ErrorService} from '../../core/services/error.service';
+import {environment} from '../../../environments/environment';
 
 @Injectable()
 export abstract class BaseApi {
   protected http = inject(HttpClient);
+
+  // Changement pour CI/CD, BASE_URL à adapter
   protected readonly BASE_URL = '';
+  //protected readonly BASE_URL = environment.apiUrl;
   protected readonly errorService = inject(ErrorService);
 
   protected getHeaders(): HttpHeaders {
