@@ -1,8 +1,10 @@
-import {Component, computed, input, output} from '@angular/core';
+import {Component, computed, inject, input, output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {Product} from '../../models/product.model';
 import {RouterLink} from '@angular/router';
 import {NoteForm} from '../note-form/note-form';
+import {ProductStore} from '../../services/product.store';
+import {CartFacade} from '../../../cart/services/cart.facade';
 
 @Component({
   selector: 'app-product-card',
@@ -13,9 +15,12 @@ import {NoteForm} from '../note-form/note-form';
 export class ProductCard {
   showRatingForm = false
   product = input.required<Product>();
+  localProduct = computed(() => this.productStore.products().find(p => p.id === this.product().id));
 
-// 👇 Outputs pour envoyer des événements au parent
-  productAddedToCart = output<Product>();
+  productStore:ProductStore = inject(ProductStore);
+  cartFacade = inject(CartFacade);
+
+  // 👇 Outputs pour envoyer des événements au parent
   productAddedToFavorites = output<Product>();
   productRemovedFromFavorites = output<Product>();
 
@@ -27,18 +32,20 @@ export class ProductCard {
 
   isFavorite = input<boolean>(false);
 
-  onAddToCart(): void {
+  async onAddToCart(): Promise<void> {
     // 👇 Émettre l'événement vers le parent
-    this.productAddedToCart.emit(this.product());
+    this.cartFacade.addToCart(this.product());
   }
 
   onToggleFavorite(): void {
     if (this.isFavorite()) {
       // 👇 Émettre l'événement vers le parent
       this.productRemovedFromFavorites.emit(this.product());
+      console.log("Produit retiré de l'enfant ", this.productAddedToFavorites);
     } else {
       // 👇 Émettre l'événement vers le parent
       this.productAddedToFavorites.emit(this.product());
+      console.log("Produit ajouté de l'enfant ", this.productAddedToFavorites);
     }
   }
 
@@ -49,7 +56,7 @@ export class ProductCard {
   });
 
   onSubmitNotation(event: { id: number, rating: number }) {
-    this.notationAdded.emit({productId: event.id, rating: event.rating})
+    this.productStore.onNotationAdded({productId: event.id, rating: event.rating})
     this.showRatingForm = false;
   }
 }

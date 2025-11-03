@@ -16,7 +16,8 @@
 
     <div class="product-meta">
       <span class="product-price">{{ product().price }}€</span>
-      <span class="product-rating">⭐ {{ product().rating }}/5</span>
+      <!-- <span class="product-rating">⭐ {{ product().rating }}/5</span> -->
+      <span class="product-rating">⭐ {{ localProduct()?.rating }}/5</span>  <!-- ajout pour notation sur produit selectionné -->
     </div>
 
     <div class="product-actions">
@@ -37,6 +38,7 @@
         (submitNote)="onSubmitNotation($event)"
       >
       </app-note-form>
+
     }
   </div>
 </div>
