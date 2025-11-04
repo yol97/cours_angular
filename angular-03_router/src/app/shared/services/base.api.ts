@@ -9,8 +9,8 @@ export abstract class BaseApi {
   protected http = inject(HttpClient);
 
   // Changement pour CI/CD, BASE_URL à adapter
-  protected readonly BASE_URL = '';
-  //protected readonly BASE_URL = environment.apiUrl;
+  // protected readonly BASE_URL = '';
+  protected readonly BASE_URL = environment.apiUrl;
   protected readonly errorService = inject(ErrorService);
 
   protected getHeaders(): HttpHeaders {

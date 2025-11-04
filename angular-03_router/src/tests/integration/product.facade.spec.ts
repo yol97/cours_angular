@@ -6,7 +6,7 @@ import {ProductApi} from '../../app/features/product/services/product.api';
 import { ProductFacade } from "../../app/features/product/services/product.facade";
 import { ProductStore } from "../../app/features/product/services/product.store";
 import { Product } from "../../app/features/product/models/product.model";
-// import {environment} from '../../environments/environment';
+import {environment} from '../../environments/environment';
 
 describe('ProductFacade.createProduct (integration)', () => {
   let facade: ProductFacade;
