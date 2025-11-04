@@ -96,7 +96,7 @@ jobs:
         run: npm ci
 
       - name: Start angular server
-        run: npm run start
+        run: npm run start &
 
       - name: Wait for server
         run: npx wait-on http://localhost:4200/
