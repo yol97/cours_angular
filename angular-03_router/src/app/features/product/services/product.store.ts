@@ -1,3 +1,4 @@
+// product.store.ts
 import {computed, Injectable, signal} from '@angular/core';
 import {Product} from '../models/product.model';
 
@@ -31,13 +32,16 @@ export class ProductStore {
 
     if (!product) return;
 
-    if (!product.reviews) {
-      product.reviews = [product.rating];
+    if (!product.reviews || product.reviews.length === 0) {
+      // on part d'un tableau vide (note initiale de 4.9 par exemple sur un article au début)
+      product.reviews = [Number(product.rating)];   // on convertit string "4.9" => number
     }
 
-    product.reviews.push(event.rating);
+    product.reviews.push(event.rating);   // on ajoute la nouvelle note
 
-    const total = product.reviews.reduce((sum, r) => sum + r, 0);
+    // 👇 on convertit encore le string r => Number(r)
+    const total = product.reviews.reduce((sum, r) => sum + Number(r), 0);
+    console.log(`Total: ${total} reviews`);
     const average = total / product.reviews.length;
 
     product.rating = parseFloat(average.toFixed(1));
