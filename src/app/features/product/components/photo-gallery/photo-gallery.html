@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="header">
+    <h2>Liste des photos</h2>
+    <button
+      (click)="refresh()"
+      [disabled]="isLoading()"
+      class="refresh-btn">
+      {{ isLoading() ? 'Chargement...' : 'Actualiser' }}
+    </button>
+  </div>
+
+  @if (isLoading()) {
+    <div class="loading">
+      <p>Chargement des photos...</p>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="error">
+      <p>{{ error() }}</p>
+      <button (click)="refresh()">Réessayer</button>
+    </div>
+  }
+
+  @if (!isLoading() && !error() && photos().length > 0) {
+    <div class="photos-grid">
+      @for (photo of photos(); track photo.id) {
+        <div class="photo-card">
+          <img class="photo-image" [src]="photo.download_url" [alt]="photo.author" />
+          <h3>{{ photo.author }}</h3>
+          <p><strong>Username:</strong> {{ photo.author }}</p>
+          <p><strong>Site web:</strong> {{ photo.url }}</p>
+          <p><strong>Téléchargement:</strong> {{ photo.download_url }}</p>
+          <button (click)="toggleLike(photo.id)">
+            {{ likedPhotos().includes(photo.id) ? 'Unlike' : 'Like 👍' }}
+          </button>
+          <p class="like-count">❤️ {{ likeCounts()[photo.id] || 0 }} likes</p>
+        </div>
+      }
+    </div>
+  }
+</div>
+
+
+<!--  .   -->

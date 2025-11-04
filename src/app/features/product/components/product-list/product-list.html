@@ -1,0 +1,35 @@
+<div class="row">
+  <section class="product-list">
+    <div class="product-list-container">
+      <h2>Notre catalogue</h2>
+      <div class="row">
+        <div class="counters">
+          <span class="counter">🛒 Panier: {{ count() }}</span>
+          <span class="counter">❤️ Favoris: {{ getFavoritesCount() }}</span>
+        </div>
+        <app-button-filter (changeCategory)="onChangeCategory($event)" [active]="category()"
+                           class="filter-button"></app-button-filter>
+      </div>
+      <div class="list">
+        @for (product of FiltreParCategorie(); track product.id) {
+          <app-product-card
+            (productAddedToFavorites)="onProductAddedToFavorites($event)"
+            (productRemovedFromFavorites)="onProductRemovedFromFavorites($event)"
+            [isFavorite]="isInFavorites(product.id)"
+            [product]="product">
+          </app-product-card>
+        } @empty {
+          <p class="no-products">Aucun produit disponible pour le moment</p>
+        }
+      </div>
+    </div>
+
+    <footer class="stats">
+      <p><strong>{{ getTotalProducts }}</strong> produits au total</p>
+      <p><strong>{{ getInStockCount }}</strong> produits en stock</p>
+      <p><strong>{{ count() }}</strong> articles dans le panier</p>
+      <p><strong>{{ getFavoritesCount() }}</strong> produits favoris</p>
+    </footer>
+  </section>
+  <app-cart-summary [onPage]="false"></app-cart-summary>
+</div>

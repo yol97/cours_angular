@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@app/*": [
+        "src/app/*" // 👈 on vient ajouter un alias de chemin pour simplifier les imports dans nos fichiers de tests.
+      ]
+    },
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jasmine"
+    ]
+  }
+}

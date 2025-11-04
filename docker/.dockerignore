@@ -1,0 +1,10 @@
+# Empêche Docker de copier ces fichiers/dossiers dans le build
+node_modules
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+dist/
+nginx/
+*.md
+*.log

@@ -1,0 +1,43 @@
+<!-- product-card.html -->
+<div class="product-card">
+  <div class="product-image-container">
+    <img [src]="product().imageUrl" [alt]="product().name" class="product-image"
+         [routerLink]="['/products/', product().id]">
+    <button
+      (click)="onToggleFavorite()"
+      class="favorite-btn">
+      {{ isFavorite() ? '❤️' : '🤍' }}
+    </button>
+  </div>
+
+  <div class="product-info">
+    <h3 class="product-name">{{ product().name }}</h3>
+    <p class="product-description">{{ product().description }}</p>
+
+    <div class="product-meta">
+      <span class="product-price">{{ product().price }}€</span>
+      <!-- <span class="product-rating">⭐ {{ product().rating }}/5</span> -->
+      <span class="product-rating">⭐ {{ localProduct()?.rating }}/5</span>  <!-- ajout pour notation sur produit selectionné -->
+    </div>
+
+    <div class="product-actions">
+      @if (product().inStock) {
+        <button (click)="onAddToCart()" class="btn-primary">
+          Ajouter au panier
+        </button>
+      } @else {
+        <button [disabled]="true" class="btn-disabled">
+          En rupture
+        </button>
+      }
+    </div>
+    <button (click)="handleClickShowRatingForm()" class="btn-primary">Ajouter une note</button>
+    @if (showRatingForm) {
+      <app-note-form
+        [id]="product().id"
+        (submitNote)="onSubmitNotation($event)"
+      >
+      </app-note-form>
+    }
+  </div>
+</div>

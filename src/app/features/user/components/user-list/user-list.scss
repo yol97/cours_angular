@@ -1,0 +1,90 @@
+.header button{
+  width: 220px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: #0e0ee5;
+    color: #fff;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+th {
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  cursor: default;
+}
+
+thead tr{
+  background-color: #f2f2f2;
+  cursor: default;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+tbody tr:hover {
+  background-color: #72cc11;
+  transition: background-color 0.3s ease;
+  transform: scale(1.01);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  & td {
+    color: #fff;
+  }
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  color: #666;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  &:first-child {
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+  }
+}
