@@ -2,5 +2,5 @@
 export const environment = {
   production: true,
   name: 'production',
-  apiUrl: '<url-of-your-production-api>' // Ex : api.fromphacotohero.fr
+  apiUrl: '' // Ex : api.fromphacotohero.fr
 };
