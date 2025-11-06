@@ -10,6 +10,7 @@ export const routes: Routes = [
     { path: 'users', loadComponent: () => import('../features/user/components/user-list/user-list').then(m => m.UserList) },
     { path: 'photos', loadComponent: () => import("../features/product/components/photo-gallery/photo-gallery") },
     { path: 'products', loadComponent: () => import("../features/product/pages/product.page"), resolve: { products: productListResolver } },
+    { path: 'cart', loadComponent: () => import("../features/cart/pages/cart.page")},
     { path: 'products/:id', loadComponent: () => import("../features/product/pages/product-detail.page"), resolve: {product: productResolver}},
     { path: 'admin', loadComponent: () => import("../features/admin/pages/admin.page"), canActivate: [authGuard] },
     { path: 'register', loadComponent: () => import("../features/auth/pages/register")},

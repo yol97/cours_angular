@@ -1,23 +1,71 @@
+/* === CONTAINER PRINCIPAL DE CHAQUE PRODUIT === */
 .cart-item {
-  border-radius: 5px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #fff;
-  box-shadow: 1px 1px 14px 2px #0000001f;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+  flex-direction: column; /* ✅ empile image, nom, quantité, poubelle */
+  align-items: center;    /* ✅ centre horizontalement tout le contenu */
+  justify-content: center;
+  padding: 0.75rem 0;
+  background: #f8f9fa;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
 
-.row {
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+  &:hover {
+    transform: translateY(-2px);
+  }
 
-img {
-  width: 100%;
-  border-radius: 6px;
-}
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 
-button {
+  /* === INFO PRODUIT (nom + prix) === */
+  .row {
+    display: flex;
+    flex-direction: column; /* ✅ met nom et prix l’un sous l’autre */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0.5rem;
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #333;
+
+      &:last-child {
+        font-weight: 600;
+        color: #007bff;
+      }
+    }
+  }
+
+  /* === COMPOSANT QUANTITÉ (boutons + et -) === */
+  app-quantity {
+    display: flex;
+    justify-content: center; /* ✅ centre les boutons horizontalement */
+    align-items: center;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  /* === BOUTON SUPPRIMER === */
+  .del {
+    background: #fff0f0;
+    border: 2px solid #ff4d4d;
+    color: #c70000;
+    border-radius: 2rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #ff4d4d;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+  }
 }
