@@ -3,12 +3,14 @@ import {CartItem} from '../cart-item/cart-item';
 import {CartStore} from '../../services/cart.store';
 import {RouterLink} from '@angular/router';
 import {CartFacade} from '../../services/cart.facade';
+import {CurrencyPipe} from '@angular/common';
 
 @Component({
   selector: 'app-cart-summary',
   imports: [
     CartItem,
-    RouterLink
+    RouterLink,
+    CurrencyPipe
   ],
   templateUrl: './cart-summary.html',
   styleUrl: './cart-summary.scss'
