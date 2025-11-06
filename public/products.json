@@ -7,6 +7,7 @@
     "imageUrl": "https://placehold.co/300x200/8B0000/ffffff?text=Witcher",
     "category": "gaming",
     "inStock": true,
+    "stock": 98,
     "rating": 4.9
   },
   {
@@ -17,6 +18,7 @@
     "imageUrl": "https://placehold.co/300x200/FF6347/ffffff?text=Nike",
     "category": "clothing",
     "inStock": true,
+    "stock": 41,
     "rating": 4.5
   },
   {
@@ -27,6 +29,7 @@
     "imageUrl": "https://placehold.co/300x200/4682B4/ffffff?text=Coffee",
     "category": "home",
     "inStock": false,
+    "stock": 0,
     "rating": 4.2
   },
   {
@@ -37,6 +40,7 @@
     "imageUrl": "https://placehold.co/300x200/2F4F4F/ffffff?text=Canon",
     "category": "electronics",
     "inStock": true,
+    "stock": 55,
     "rating": 4.7
   },
   {
@@ -47,6 +51,183 @@
     "imageUrl": "https://placehold.co/300x200/9370DB/ffffff?text=Yoga",
     "category": "sports",
     "inStock": false,
+    "stock": -5,
     "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "Samsung Galaxy S22",
+    "description": "Smartphone 6,1'' AMOLED 120Hz avec triple capteur photo",
+    "price": 799.99,
+    "imageUrl": "https://placehold.co/300x200/1E90FF/ffffff?text=Galaxy+S22",
+    "category": "electronics",
+    "inStock": true,
+    "stock": 30,
+    "rating": 4.6
+  },
+  {
+    "id": 7,
+    "name": "MacBook Air M2",
+    "description": "Ultrabook 13'' puce Apple M2, autonomie longue durée",
+    "price": 1199.99,
+    "imageUrl": "https://placehold.co/300x200/2E8B57/ffffff?text=MacBook+Air",
+    "category": "electronics",
+    "inStock": true,
+    "stock": 12,
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "name": "Dyson V11 Absolute",
+    "description": "Aspirateur balai sans fil haute performance pour la maison",
+    "price": 499.0,
+    "imageUrl": "https://placehold.co/300x200/708090/ffffff?text=Dyson+V11",
+    "category": "home",
+    "inStock": true,
+    "stock": 24,
+    "rating": 4.5
+  },
+  {
+    "id": 9,
+    "name": "Adidas Ultraboost 22",
+    "description": "Chaussures de running amorties pour longues distances",
+    "price": 159.99,
+    "imageUrl": "https://placehold.co/300x200/FF8C00/ffffff?text=Ultraboost",
+    "category": "clothing",
+    "inStock": true,
+    "stock": 37,
+    "rating": 4.4
+  },
+  {
+    "id": 10,
+    "name": "Nintendo Switch OLED",
+    "description": "Console portable avec écran OLED 7'' et dock TV",
+    "price": 349.99,
+    "imageUrl": "https://placehold.co/300x200/DC143C/ffffff?text=Switch+OLED",
+    "category": "gaming",
+    "inStock": true,
+    "stock": 20,
+    "rating": 4.7
+  },
+  {
+    "id": 11,
+    "name": "Sony WH-1000XM5",
+    "description": "Casque sans fil à réduction de bruit haut de gamme",
+    "price": 399.99,
+    "imageUrl": "https://placehold.co/300x200/4B0082/ffffff?text=WH-1000XM5",
+    "category": "electronics",
+    "inStock": true,
+    "stock": 18,
+    "rating": 4.8
+  },
+  {
+    "id": 12,
+    "name": "Instant Pot Duo 7-en-1",
+    "description": "Multicuiseur programmable pour cuisson rapide et facile",
+    "price": 99.99,
+    "imageUrl": "https://placehold.co/300x200/556B2F/ffffff?text=Instant+Pot",
+    "category": "home",
+    "inStock": true,
+    "stock": 45,
+    "rating": 4.6
+  },
+  {
+    "id": 13,
+    "name": "Levi's 501 Original",
+    "description": "Jean coupe droite emblématique en denim de qualité",
+    "price": 89.9,
+    "imageUrl": "https://placehold.co/300x200/000080/ffffff?text=Levi%27501",
+    "category": "clothing",
+    "inStock": true,
+    "stock": 50,
+    "rating": 4.2
+  },
+  {
+    "id": 14,
+    "name": "Cannondale Trail 5",
+    "description": "VTT semi-rigide polyvalent pour sentiers et randonnées",
+    "price": 899.0,
+    "imageUrl": "https://placehold.co/300x200/2F4F4F/ffffff?text=Trail+5",
+    "category": "sports",
+    "inStock": true,
+    "stock": 8,
+    "rating": 4.5
+  },
+  {
+    "id": 15,
+    "name": "Ballon de foot Al Rihla",
+    "description": "Ballon d'entraînement taille 5, cousu machine",
+    "price": 34.99,
+    "imageUrl": "https://placehold.co/300x200/20B2AA/ffffff?text=Football",
+    "category": "sports",
+    "inStock": true,
+    "stock": 120,
+    "rating": 4.3
+  },
+  {
+    "id": 16,
+    "name": "Logitech MX Master 3S",
+    "description": "Souris ergonomique avec défilement Magspeed silencieux",
+    "price": 99.99,
+    "imageUrl": "https://placehold.co/300x200/8B4513/ffffff?text=MX+Master+3S",
+    "category": "electronics",
+    "inStock": true,
+    "stock": 60,
+    "rating": 4.9
+  },
+  {
+    "id": 17,
+    "name": "Air Jordan 1 Mid",
+    "description": "Sneakers iconiques en cuir, style classique",
+    "price": 129.99,
+    "imageUrl": "https://placehold.co/300x200/B22222/ffffff?text=Jordan+1",
+    "category": "clothing",
+    "inStock": true,
+    "stock": 22,
+    "rating": 4.6
+  },
+  {
+    "id": 18,
+    "name": "Philips Hue Kit de démarrage",
+    "description": "Pack ampoules connectées + pont pour éclairage intelligent",
+    "price": 179.99,
+    "imageUrl": "https://placehold.co/300x200/483D8B/ffffff?text=Philips+Hue",
+    "category": "home",
+    "inStock": true,
+    "stock": 28,
+    "rating": 4.4
+  },
+  {
+    "id": 19,
+    "name": "Zelda: Tears of the Kingdom",
+    "description": "Aventure épique en monde ouvert sur Nintendo Switch",
+    "price": 59.99,
+    "imageUrl": "https://placehold.co/300x200/006400/ffffff?text=Zelda+TOTK",
+    "category": "gaming",
+    "inStock": true,
+    "stock": 75,
+    "rating": 4.9
+  },
+  {
+    "id": 20,
+    "name": "Apple Watch Series 9",
+    "description": "Montre connectée avec GPS, suivi de santé avancé",
+    "price": 399.0,
+    "imageUrl": "https://placehold.co/300x200/191970/ffffff?text=Watch+S9",
+    "category": "electronics",
+    "inStock": true,
+    "stock": 25,
+    "rating": 4.7
+  },
+  {
+    "id": 21,
+    "name": "Asics Gel-Kayano 30",
+    "description": "Chaussures de stabilité pour coureurs pronateurs",
+    "price": 169.99,
+    "imageUrl": "https://placehold.co/300x200/000000/ffffff?text=Gel-Kayano+30",
+    "category": "clothing",
+    "inStock": true,
+    "stock": 16,
+    "rating": 4.5
   }
 ]

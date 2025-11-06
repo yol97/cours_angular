@@ -1,4 +1,4 @@
-.filter-container {
+/* .filter-container {
   text-align: center;
   margin: 1.5rem 0;
 
@@ -35,5 +35,34 @@
   .filter-info {
     margin-top: 0.5rem;
     color: #555;
+  }
+} */
+
+
+button {
+  background: #f1f3f5;
+  border: 3px solid #dee2e6;
+  border-radius: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
